@@ -1,11 +1,10 @@
 package com.zy.shardingjdbcdemo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zy.shardingjdbcdemo.dao.BookMapper;
 import com.zy.shardingjdbcdemo.entity.Book;
 import com.zy.shardingjdbcdemo.service.BookService;
-
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +20,8 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, Book> implements Bo
 
     @Override
     public List<Book> getBookList() {
-        return baseMapper.selectList(Wrappers.lambdaQuery());
+        QueryWrapper<Book> wrapper = new QueryWrapper<>();
+        return super.list(wrapper);
     }
 
     @Override
