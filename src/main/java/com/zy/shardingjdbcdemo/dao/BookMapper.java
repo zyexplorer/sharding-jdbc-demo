@@ -16,4 +16,9 @@ public interface BookMapper extends BaseMapper<Book> {
      */
     int getTotalCount();
 
+    /**
+     * 查询book表的最大ID
+     * @return 返回book表的最大ID
+     */
+    Integer queryMaxId();
 }

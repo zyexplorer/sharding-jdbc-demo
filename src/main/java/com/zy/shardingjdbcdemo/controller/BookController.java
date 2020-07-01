@@ -12,9 +12,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author Macky
- * @Title class BookController
- * @Description:
+ * @author ZY
  */
 @RestController
 @RequestMapping("/book")
@@ -24,12 +22,18 @@ public class BookController {
     BookService bookService;
 
     @GetMapping("/getBookList")
-    public List<Book> getItems(){
-        return bookService.getBookList();
+    public List<Book> getBookList(Integer page, Integer pageSize){
+        return bookService.getBookList(page, pageSize);
     }
 
     @PostMapping("/saveBook")
     public Boolean saveBook(Book book){
         return bookService.save(book);
     }
+
+    @GetMapping("/getMaxId")
+    public Integer getMaxId() {
+        return bookService.getMaxId();
+    }
+
 }

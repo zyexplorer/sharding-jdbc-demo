@@ -13,4 +13,8 @@
         select count(1) from book
     </select>
 
+    <select id="queryMaxId" resultType="java.lang.Integer">
+        select max(id) from book
+    </select>
+
 </mapper>

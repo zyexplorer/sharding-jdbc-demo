@@ -3,8 +3,11 @@ package com.zy.shardingjdbcdemo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import groovy.transform.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 /**
@@ -12,7 +15,11 @@ import lombok.experimental.Accessors;
  * @Title class Book
  * @Description: 书籍是实体类
  */
+
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @TableName("book")
