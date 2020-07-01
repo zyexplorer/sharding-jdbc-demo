@@ -27,5 +27,12 @@ public class BookMapperTest extends ShardingJdbcDemoApplicationTests {
         IPage<Map<String, Object>> pageMap = bookMapper.selectMapsPage(page, wrapper);
         System.out.println("总记录数：" + pageMap.getTotal());
         System.out.println("总页数：" + pageMap.getPages());
+
+    }
+
+    @Test
+    public void testMyGetTotalCount() {
+        int totalCount = bookMapper.getTotalCount();
+        System.out.println("自定义SQL查询总记录数：" + totalCount);
     }
 }

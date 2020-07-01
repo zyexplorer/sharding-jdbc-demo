@@ -10,4 +10,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookMapper extends BaseMapper<Book> {
 
+    /**
+     * 查询总记录数
+     * @return 返回总记录数
+     */
+    int getTotalCount();
+
 }
